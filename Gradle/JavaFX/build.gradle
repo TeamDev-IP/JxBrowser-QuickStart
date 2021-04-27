@@ -47,3 +47,9 @@ application {
     // Define the main class for the application
     mainClassName = 'HelloWorld'
 }
+
+tasks.withType(JavaExec) {
+    // Assign all Java system properties from
+    // the command line to the JavaExec task.
+    systemProperties System.properties
+}

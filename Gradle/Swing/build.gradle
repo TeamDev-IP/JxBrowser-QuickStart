@@ -27,8 +27,8 @@ plugins {
 }
 
 repositories {
-   // The repository for JxBrowser binaries.
-   maven { url = 'https://europe-maven.pkg.dev/jxbrowser/releases' }
+    // The repository for JxBrowser binaries.
+    maven { url = 'https://europe-maven.pkg.dev/jxbrowser/releases' }
 }
 
 ext {
@@ -46,4 +46,10 @@ dependencies {
 application {
     // Define the main class for the application
     mainClassName = 'HelloWorld'
+}
+
+tasks.withType(JavaExec) {
+    // Assign all Java system properties from
+    // the command line to the JavaExec task.
+    systemProperties System.properties
 }
