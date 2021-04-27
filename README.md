@@ -2,19 +2,17 @@
 
 This repository contains the examples for the [Quick Start](https://jxbrowser-support.teamdev.com/docs/quickstart/) guide.
 
-To learn about the library please visit the [product page](https://www.teamdev.com/jxbrowser).
-
 ## Prerequisites
 
-1. Make sure your environment meets the
+Make sure your environment meets the
 [software and hardware requirements](/docs/guides/introduction/requirements.html).
 
-2. Download a free 30-day evaluation license key by sending a request via the [web form](https://www.teamdev.com/jxbrowser#evaluate).
+Download a free 30-day evaluation license key by sending a request via the [web form](https://www.teamdev.com/jxbrowser#evaluate).
 
-3. Clone this repository using the following command:
-    ```bash
-    git clone https://github.com/TeamDev-IP/JxBrowser-QuickStart
-    ```
+Clone this repository using the following command:
+ ```bash
+ git clone https://github.com/TeamDev-IP/JxBrowser-QuickStart
+ ```
 
 ## Setup & Run
 
