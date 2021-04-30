@@ -22,7 +22,6 @@ import static com.teamdev.jxbrowser.engine.RenderingMode.OFF_SCREEN;
 
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.engine.Engine;
-import com.teamdev.jxbrowser.engine.EngineOptions;
 import com.teamdev.jxbrowser.frame.Frame;
 
 /**
@@ -33,8 +32,7 @@ public final class HelloWorld {
 
     public static void main(String[] args) {
         // Initialize Chromium.
-        Engine engine = Engine.newInstance(
-                EngineOptions.newBuilder(OFF_SCREEN).build());
+        Engine engine = Engine.newInstance(OFF_SCREEN);
 
         // Create a Browser instance.
         Browser browser = engine.newBrowser();

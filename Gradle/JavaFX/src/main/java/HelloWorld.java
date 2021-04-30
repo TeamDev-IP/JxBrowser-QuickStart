@@ -22,7 +22,6 @@ import static com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED;
 
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.engine.Engine;
-import com.teamdev.jxbrowser.engine.EngineOptions;
 import com.teamdev.jxbrowser.view.javafx.BrowserView;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -39,8 +38,7 @@ public final class HelloWorld extends Application {
     @Override
     public void start(Stage primaryStage) {
         // Initialize Chromium.
-        Engine engine = Engine.newInstance(
-                EngineOptions.newBuilder(HARDWARE_ACCELERATED).build());
+        Engine engine = Engine.newInstance(HARDWARE_ACCELERATED);
 
         Browser browser = engine.newBrowser();
 

@@ -22,7 +22,6 @@ import static com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED;
 
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.engine.Engine;
-import com.teamdev.jxbrowser.engine.EngineOptions;
 import com.teamdev.jxbrowser.view.swt.BrowserView;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Display;
@@ -37,8 +36,7 @@ public final class HelloWorld {
 
     public static void main(String[] args) {
         // Initialize Chromium.
-        Engine engine = Engine.newInstance(
-                EngineOptions.newBuilder(HARDWARE_ACCELERATED).build());
+        Engine engine = Engine.newInstance(HARDWARE_ACCELERATED);
 
         // Create a Browser instance.
         Browser browser = engine.newBrowser();
