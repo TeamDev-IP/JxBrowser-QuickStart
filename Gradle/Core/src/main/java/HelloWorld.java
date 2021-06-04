@@ -25,7 +25,7 @@ import com.teamdev.jxbrowser.engine.Engine;
 
 /**
  * This example demonstrates how to load a web page, wait until it is loaded
- * completely, access its DOM and print its HTML without displaying any GUI.
+ * completely, and print its HTML without displaying any GUI.
  */
 public final class HelloWorld {
 
@@ -39,7 +39,7 @@ public final class HelloWorld {
         // Load a web page and wait until it is loaded completely.
         browser.navigation().loadUrlAndWait("https://html5test.com/");
 
-        // Access DOM and print HTML of the loaded web page.
+        // Print HTML of the loaded web page.
         browser.mainFrame().ifPresent(frame -> System.out.println(frame.html()));
 
         // Shutdown Chromium and release allocated resources.
