@@ -22,11 +22,10 @@ import static com.teamdev.jxbrowser.engine.RenderingMode.OFF_SCREEN;
 
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.engine.Engine;
-import com.teamdev.jxbrowser.frame.Frame;
 
 /**
  * This example demonstrates how to load a web page, wait until it is loaded
- * completely, access its DOM and print its text content without displaying any GUI.
+ * completely, access its DOM and print its HTML without displaying any GUI.
  */
 public final class HelloWorld {
 
@@ -40,9 +39,8 @@ public final class HelloWorld {
         // Load a web page and wait until it is loaded completely.
         browser.navigation().loadUrlAndWait("https://html5test.com/");
 
-        // Access DOM and print text content of the loaded web page.
-        browser.mainFrame().flatMap(Frame::document)
-                .ifPresent(document -> System.out.println(document.textContent()));
+        // Access DOM and print HTML of the loaded web page.
+        browser.mainFrame().ifPresent(frame -> System.out.println(frame.html()));
 
         // Shutdown Chromium and release allocated resources.
         engine.close();
