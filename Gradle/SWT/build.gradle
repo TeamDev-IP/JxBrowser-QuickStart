@@ -42,7 +42,7 @@ repositories {
 }
 
 ext {
-    jxBrowserVersion = '7.21.2'
+    jxBrowserVersion = '7.22'
 }
 
 dependencies {
