@@ -4,8 +4,7 @@ This repository contains the examples for the [Quick Start](https://jxbrowser-su
 
 ## Prerequisites
 
-Make sure your environment meets the
-[software and hardware requirements](/docs/guides/introduction/requirements.html).
+Make sure your environment meets the [software and hardware requirements](/docs/guides/introduction/requirements.html).
 
 Download a free 30-day trial key via the [web form](https://www.teamdev.com/jxbrowser#evaluate).
 
