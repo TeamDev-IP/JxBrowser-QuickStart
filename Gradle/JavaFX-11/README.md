@@ -1,6 +1,6 @@
 # JxBrowser in JavaFX 11+ Gradle Project
 
-This example demonstrates how to configure a Gradle project with JxBrowser to embed an JavaFX `BrowserView` widget into
+This example demonstrates how to configure a Gradle project with JxBrowser to embed a JavaFX `BrowserView` widget into
 a JavaFX desktop application to display web pages.
 
 ## Prerequisites
