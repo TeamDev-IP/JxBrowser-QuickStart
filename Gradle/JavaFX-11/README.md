@@ -18,7 +18,7 @@ Clone this repository using the following command:
 
 ## Get License
 
-Download a free 30-day evaluation license key by sending a request via
+Download a free 30-day trial key by sending a request via
 the [web form](https://www.teamdev.com/jxbrowser#evaluate).
 
 ## Run the JavaFX Application
