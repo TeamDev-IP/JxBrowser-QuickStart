@@ -5,8 +5,7 @@ a JavaFX desktop application to display web pages.
 
 ## Prerequisites
 
-To compile and run this example please make sure you use Java 8. In Java 10 and higher, JavaFX is no longer a part of
-JRE.
+To compile and run this example please make sure you use Java 11 or higher.
 
 ## Download the Project
 
