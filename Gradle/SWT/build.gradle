@@ -60,7 +60,7 @@ eclipseMavenCentral {
     // Nevertheless all versions higher than 4.8.0 cannot be resolved.
     // Current version is bundled with the 3.107.0 version of the SWT.
     release '4.8.0', {
-        compile 'org.eclipse.swt'
+        implementation 'org.eclipse.swt'
         useNativesForRunningPlatform()
     }
 }
