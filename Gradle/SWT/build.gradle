@@ -32,7 +32,7 @@ plugins {
     id 'application'
 
     // This plugin automatically resolves SWT dependencies.
-    id 'com.diffplug.gradle.eclipse.mavencentral' version '3.18.0' apply false
+    id 'com.diffplug.eclipse.mavencentral' version '3.40.0' apply false
 }
 
 repositories {
@@ -53,13 +53,16 @@ dependencies {
     implementation "com.teamdev.jxbrowser:jxbrowser-swt:${jxBrowserVersion}"
 }
 
-apply plugin: 'com.diffplug.gradle.eclipse.mavencentral'
+apply plugin: 'com.diffplug.eclipse.mavencentral'
 
 eclipseMavenCentral {
-    // Plugin documentation claims that they support versions 3.5.0 through 4.12.0.
-    // Nevertheless all versions higher than 4.8.0 cannot be resolved.
-    // Current version is bundled with the 3.107.0 version of the SWT.
-    release '4.8.0', {
+    // Eclipse Platform v4.25 has SWT v3.121, which supports Apple Silicon,
+    // but doesn't support Java 8.
+    String eclipsePlatform =
+            JavaVersion.current().isJava8()
+                    ? '4.8.0'
+                    : '4.25.0'
+    release eclipsePlatform, {
         implementation 'org.eclipse.swt'
         useNativesForRunningPlatform()
     }
