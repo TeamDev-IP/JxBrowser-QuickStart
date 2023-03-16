@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <jxbrowser.version>7.30.3</jxbrowser.version>
+        <jxbrowser.version>7.31</jxbrowser.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
