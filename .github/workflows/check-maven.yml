@@ -1,0 +1,25 @@
+name: Check Maven-based Projects
+on: pull_request
+
+jobs:
+  maven:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: '8'
+      - run: -|
+          cd Maven/Core
+          mvn package
+          cd ../JavaFX
+          mvn package
+          cd ../Swing
+          mvn package
+          cd ../SWT
+          mvn package
