@@ -14,7 +14,7 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '8'
-      - run: -|
+      - run: |-
           cd Gradle/Core
           ./gradlew build
           cd ../JavaFX
@@ -36,6 +36,6 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '11'
-      - run: -|
+      - run: |-
           cd Gradle/JavaFX-11
           ./gradlew build
