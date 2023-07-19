@@ -19,10 +19,10 @@ To run an example, please follow the corresponding instruction:
 
 ### Gradle
 
-- [Swing](Gradle/Swing) — how to embed a component into a Swing application to display web content 
-- [JavaFX](Gradle/JavaFX) — how to embed a component into a JavaFX application to display web content
-- [SWT](Gradle/SWT) — how to embed a component into an SWT application to display web content
-- [Core](Gradle/Core) — how to work with a web page without displaying any GUI
+- [Swing](Gradle_/Swing) — how to embed a component into a Swing application to display web content 
+- [JavaFX](Gradle_/JavaFX) — how to embed a component into a JavaFX application to display web content
+- [SWT](Gradle_/SWT) — how to embed a component into an SWT application to display web content
+- [Core](Gradle_/Core) — how to work with a web page without displaying any GUI
 
 ### Maven
 
