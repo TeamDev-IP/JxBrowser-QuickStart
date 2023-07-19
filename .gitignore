@@ -12,3 +12,7 @@ out
 
 # Ignore Maven build output directory
 target
+
+# Ignore locally stored Gradle property file.
+# JxBrowser license key is stored in this file too.
+gradle.properties

@@ -22,38 +22,43 @@ import static com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED;
 
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.engine.Engine;
-import com.teamdev.jxbrowser.view.javafx.BrowserView;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
+import com.teamdev.jxbrowser.view.swing.BrowserView;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 /**
  * This example demonstrates how to initialize Chromium, create a browser instance
- * (equivalent of the Chromium tab), embed a JavaFX BrowserView component into JavaFX
- * scene to display content of the loaded web page, load the required web page.
+ * (equivalent of the Chromium tab), embed a Swing BrowserView component into Java Swing
+ * frame to display content of the loaded web page, load the required web page.
  */
-public final class HelloWorld extends Application {
+public final class HelloSwing {
 
-    @Override
-    public void start(Stage primaryStage) {
+    public static void main(String[] args) {
         // Initialize Chromium.
         Engine engine = Engine.newInstance(HARDWARE_ACCELERATED);
 
+        // Create a Browser instance.
         Browser browser = engine.newBrowser();
 
-        // Load the required web page.
-        browser.navigation().loadUrl("https://html5test.com");
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("JxBrowser Quick Start with Swing");
+            frame.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    // Shutdown Chromium and release allocated resources.
+                    engine.close();
+                }
+            });
+            // Create and embed Swing BrowserView component to display web content.
+            frame.add(BrowserView.newInstance(browser));
+            frame.setSize(1280, 800);
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
 
-        // Create and embed JavaFX BrowserView component to display web content.
-        BrowserView view = BrowserView.newInstance(browser);
-
-        Scene scene = new Scene(new BorderPane(view), 1280, 800);
-        primaryStage.setTitle("JxBrowser JavaFX");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-
-        // Shutdown Chromium and release allocated resources.
-        primaryStage.setOnCloseRequest(event -> engine.close());
+            // Load the required web page.
+            browser.navigation().loadUrl("https://html5test.com/");
+        });
     }
 }
