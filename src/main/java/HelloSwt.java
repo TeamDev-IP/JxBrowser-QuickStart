@@ -22,38 +22,48 @@ import static com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED;
 
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.engine.Engine;
-import com.teamdev.jxbrowser.view.javafx.BrowserView;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
+import com.teamdev.jxbrowser.view.swt.BrowserView;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 
 /**
  * This example demonstrates how to initialize Chromium, create a browser instance
- * (equivalent of the Chromium tab), embed a JavaFX BrowserView component into JavaFX
- * scene to display content of the loaded web page, load the required web page.
+ * (equivalent of the Chromium tab), embed an SWT BrowserView widget into SWT
+ * shell to display content of the loaded web page, load the required web page.
  */
-public final class HelloJavaFX extends Application {
+public final class HelloSwt {
 
-    @Override
-    public void start(Stage primaryStage) {
+    public static void main(String[] args) {
         // Initialize Chromium.
         Engine engine = Engine.newInstance(HARDWARE_ACCELERATED);
 
+        // Create a Browser instance.
         Browser browser = engine.newBrowser();
 
         // Load the required web page.
         browser.navigation().loadUrl("https://html5test.com");
 
-        // Create and embed JavaFX BrowserView component to display web content.
-        BrowserView view = BrowserView.newInstance(browser);
+        Display display = new Display();
+        Shell shell = new Shell(display);
+        shell.setText("JxBrowser Quick Start with SWT");
+        shell.setLayout(new FillLayout());
 
-        Scene scene = new Scene(new BorderPane(view), 1280, 800);
-        primaryStage.setTitle("JxBrowser JavaFX");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        // Create and embed SWT BrowserView widget to display web content.
+        BrowserView view = BrowserView.newInstance(shell, browser);
+        view.setSize(1280, 800);
 
+        shell.pack();
+        shell.open();
+
+        while (!shell.isDisposed()) {
+            if (!display.readAndDispatch()) {
+                display.sleep();
+            }
+        }
         // Shutdown Chromium and release allocated resources.
-        primaryStage.setOnCloseRequest(event -> engine.close());
+        engine.close();
+
+        display.dispose();
     }
 }

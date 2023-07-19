@@ -18,31 +18,42 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import static com.teamdev.jxbrowser.engine.RenderingMode.OFF_SCREEN;
+import static com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED;
 
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.engine.Engine;
+import com.teamdev.jxbrowser.view.javafx.BrowserView;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 /**
- * This example demonstrates how to load a web page, wait until it is loaded
- * completely, and print its HTML without displaying any GUI.
+ * This example demonstrates how to initialize Chromium, create a browser instance
+ * (equivalent of the Chromium tab), embed a JavaFX BrowserView component into JavaFX
+ * scene to display content of the loaded web page, load the required web page.
  */
-public final class HelloOffScreen {
+public final class HelloJavaFx extends Application {
 
-    public static void main(String[] args) {
+    @Override
+    public void start(Stage primaryStage) {
         // Initialize Chromium.
-        Engine engine = Engine.newInstance(OFF_SCREEN);
+        Engine engine = Engine.newInstance(HARDWARE_ACCELERATED);
 
-        // Create a Browser instance.
         Browser browser = engine.newBrowser();
 
-        // Load a web page and wait until it is loaded completely.
-        browser.navigation().loadUrlAndWait("https://html5test.com/");
+        // Load the required web page.
+        browser.navigation().loadUrl("https://html5test.com");
 
-        // Print HTML of the loaded web page.
-        browser.mainFrame().ifPresent(frame -> System.out.println(frame.html()));
+        // Create and embed JavaFX BrowserView component to display web content.
+        BrowserView view = BrowserView.newInstance(browser);
+
+        Scene scene = new Scene(new BorderPane(view), 1280, 800);
+        primaryStage.setTitle("JxBrowser JavaFX");
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
         // Shutdown Chromium and release allocated resources.
-        engine.close();
+        primaryStage.setOnCloseRequest(event -> engine.close());
     }
 }
