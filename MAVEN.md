@@ -1,73 +1,7 @@
 # JxBrowser Quick Start on Maven
 
 If you are using Maven, you can add JxBrowser artifacts to your project by
-adding the dependencies to your `pom.xml` file as described below.
-
-Start with `pom.xml` file that contains the following content:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.teamdev.jxbrowser.quickstart</groupId>
-    <artifactId>on-maven</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
-    <properties>
-        <jxbrowser.version>7.33.2</jxbrowser.version>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
-
-    <repositories>
-        
-        <!--  JxBrowser artifacts are hosted at this repository. -->
-        <repository>
-            <id>com.teamdev</id>
-            <url>https://europe-maven.pkg.dev/jxbrowser/releases</url>
-        </repository>
-        
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.teamdev.jxbrowser</groupId>
-            <artifactId>jxbrowser-cross-platform</artifactId>
-            <version>${jxbrowser.version}</version>
-            <type>pom</type>
-        </dependency>
-        
-        <!--  Platform and window system dependencies should go here. -->
-
-        <dependency>
-            <groupId>com.teamdev.jxbrowser</groupId>
-            <artifactId>jxbrowser-swing</artifactId>
-            <version>${jxbrowser.version}</version>
-        </dependency>
-        
-        
-    </dependencies>
-
-</project>
-```
-
-
-
-```xml
-
-```
-
-```xml
-<dependency>
-    <groupId>com.teamdev.jxbrowser</groupId>
-    <artifactId>jxbrowser-javafx</artifactId>
-    <version>${jxbrowser.version}</version>
-</dependency>
-
-``` 
+using the content of `pom.xml` from the code block below.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
