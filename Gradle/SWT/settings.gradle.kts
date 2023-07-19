@@ -18,35 +18,4 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-plugins {
-    // Apply the java plugin to add support for Java
-    id 'java'
-
-    // Apply the application plugin to add support for building a CLI application
-    id 'application'
-}
-
-repositories {
-   // The repository for JxBrowser binaries.
-   maven { url = 'https://europe-maven.pkg.dev/jxbrowser/releases' }
-}
-
-ext {
-    jxBrowserVersion = '7.33.2'
-}
-
-dependencies {
-    // Use JxBrowser cross-platform binaries
-    implementation "com.teamdev.jxbrowser:jxbrowser-cross-platform:${jxBrowserVersion}"
-}
-
-application {
-    // Define the main class for the application
-    mainClassName = 'HelloWorld'
-}
-
-tasks.withType(JavaExec) {
-    // Assign all Java system properties from
-    // the command line to the JavaExec task.
-    systemProperties System.properties
-}
+rootProject.name = "SWT"

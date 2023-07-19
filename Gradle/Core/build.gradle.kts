@@ -18,4 +18,33 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-rootProject.name = 'SWT'
+plugins {
+    // Apply the java plugin to add support for Java
+    java
+
+    // Apply the application plugin to add support for building a CLI application
+    application
+}
+
+repositories {
+    // The repository for JxBrowser binaries.
+    maven("https://europe-maven.pkg.dev/jxbrowser/releases")
+}
+
+val jxBrowserVersion by extra { "7.33.2" }
+
+dependencies {
+    // Use JxBrowser cross-platform binaries
+    implementation("com.teamdev.jxbrowser:jxbrowser-cross-platform:$jxBrowserVersion")
+}
+
+application {
+    // Define the main class for the application
+    mainClass.set("HelloWorld")
+}
+
+tasks.withType<JavaExec> {
+    // Assign all Java system properties from
+    // the command line to the JavaExec task.
+    systemProperties(System.getProperties().mapKeys { it.key as String })
+}

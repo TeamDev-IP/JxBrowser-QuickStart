@@ -18,63 +18,36 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-}
-
 plugins {
     // Apply the java plugin to add support for Java
-    id 'java'
+    java
 
     // Apply the application plugin to add support for building a CLI application
-    id 'application'
-
-    // This plugin automatically resolves SWT dependencies.
-    id 'com.diffplug.eclipse.mavencentral' version '3.40.0' apply false
+    application
 }
 
 repositories {
-    jcenter()
     // The repository for JxBrowser binaries.
-    maven { url = 'https://europe-maven.pkg.dev/jxbrowser/releases' }
+    maven("https://europe-maven.pkg.dev/jxbrowser/releases")
 }
 
-ext {
-    jxBrowserVersion = '7.33.2'
-}
+val jxBrowserVersion by extra { "7.33.2" }
 
 dependencies {
     // Use JxBrowser cross-platform binaries
-    implementation "com.teamdev.jxbrowser:jxbrowser-cross-platform:${jxBrowserVersion}"
+    implementation("com.teamdev.jxbrowser:jxbrowser-cross-platform:$jxBrowserVersion")
 
-    // Use JxBrowser SWT GUI toolkit
-    implementation "com.teamdev.jxbrowser:jxbrowser-swt:${jxBrowserVersion}"
-}
-
-apply plugin: 'com.diffplug.eclipse.mavencentral'
-
-eclipseMavenCentral {
-    // Eclipse Platform v4.25 has SWT v3.121, which supports Apple Silicon,
-    // but doesn't support Java 8.
-    String eclipsePlatform =
-            JavaVersion.current().isJava8()
-                    ? '4.8.0'
-                    : '4.25.0'
-    release eclipsePlatform, {
-        implementation 'org.eclipse.swt'
-        useNativesForRunningPlatform()
-    }
+    // Use JxBrowser JavaFX GUI toolkit
+    implementation("com.teamdev.jxbrowser:jxbrowser-javafx:$jxBrowserVersion")
 }
 
 application {
     // Define the main class for the application
-    mainClassName = 'HelloWorld'
+    mainClass.set("HelloWorld")
 }
 
-tasks.withType(JavaExec) {
+tasks.withType<JavaExec> {
     // Assign all Java system properties from
     // the command line to the JavaExec task.
-    systemProperties System.properties
+    systemProperties(System.getProperties().mapKeys { it.key as String })
 }

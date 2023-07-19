@@ -18,4 +18,4 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-rootProject.name = 'JavaFX'
+rootProject.name = "JavaFX"
