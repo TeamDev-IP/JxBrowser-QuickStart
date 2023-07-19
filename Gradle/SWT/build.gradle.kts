@@ -30,6 +30,7 @@ plugins {
 }
 
 repositories {
+    mavenCentral()
     // The repository for JxBrowser binaries.
     maven("https://europe-maven.pkg.dev/jxbrowser/releases")
 }
@@ -43,8 +44,6 @@ dependencies {
     // Use JxBrowser SWT GUI toolkit
     implementation("com.teamdev.jxbrowser:jxbrowser-swt:$jxBrowserVersion")
 }
-
-apply(plugin = "com.diffplug.eclipse.mavencentral")
 
 eclipseMavenCentral {
     // Eclipse Platform v4.25 has SWT v3.121, which supports Apple Silicon,
