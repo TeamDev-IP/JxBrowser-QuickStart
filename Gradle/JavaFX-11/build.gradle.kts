@@ -35,7 +35,7 @@ repositories {
     maven("https://europe-maven.pkg.dev/jxbrowser/releases")
 }
 
-val jxBrowserVersion by extra { "7.33.2" }
+val jxBrowserVersion by extra { "7.34" }
 
 dependencies {
     // Use JxBrowser cross-platform binaries
