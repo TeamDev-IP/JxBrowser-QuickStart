@@ -20,36 +20,34 @@
 
 plugins {
     // Apply the java plugin to add support for Java
-    id 'java'
+    java
 
     // Apply the application plugin to add support for building a CLI application
-    id 'application'
+    application
 }
 
 repositories {
-   // The repository for JxBrowser binaries.
-   maven { url = 'https://europe-maven.pkg.dev/jxbrowser/releases' }
-}
-
-ext {
-    jxBrowserVersion = '7.34.1'
+    // The repository for JxBrowser binaries.
+    maven("https://europe-maven.pkg.dev/jxbrowser/releases")
 }
 
 dependencies {
+    val jxBrowserVersion = "7.34.1"
+
     // Use JxBrowser cross-platform binaries
-    implementation "com.teamdev.jxbrowser:jxbrowser-cross-platform:${jxBrowserVersion}"
+    implementation("com.teamdev.jxbrowser:jxbrowser-cross-platform:$jxBrowserVersion")
 
     // Use JxBrowser JavaFX GUI toolkit
-    implementation "com.teamdev.jxbrowser:jxbrowser-javafx:${jxBrowserVersion}"
+    implementation("com.teamdev.jxbrowser:jxbrowser-javafx:$jxBrowserVersion")
 }
 
 application {
     // Define the main class for the application
-    mainClassName = 'HelloWorld'
+    mainClass.set("HelloWorld")
 }
 
-tasks.withType(JavaExec) {
+tasks.withType<JavaExec> {
     // Assign all Java system properties from
     // the command line to the JavaExec task.
-    systemProperties System.properties
+    systemProperties(System.getProperties().mapKeys { it.key as String })
 }

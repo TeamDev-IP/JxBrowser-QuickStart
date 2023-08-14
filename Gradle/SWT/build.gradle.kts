@@ -20,36 +20,48 @@
 
 plugins {
     // Apply the java plugin to add support for Java
-    id 'java'
+    java
 
     // Apply the application plugin to add support for building a CLI application
-    id 'application'
+    application
+
+    // This plugin automatically resolves SWT dependencies.
+    id("com.diffplug.eclipse.mavencentral") version "3.40.0"
 }
 
 repositories {
+    mavenCentral()
     // The repository for JxBrowser binaries.
-    maven { url = 'https://europe-maven.pkg.dev/jxbrowser/releases' }
-}
-
-ext {
-    jxBrowserVersion = '7.34.1'
+    maven("https://europe-maven.pkg.dev/jxbrowser/releases")
 }
 
 dependencies {
-    // Use JxBrowser cross-platform binaries
-    implementation "com.teamdev.jxbrowser:jxbrowser-cross-platform:${jxBrowserVersion}"
+    val jxBrowserVersion = "7.34.1"
 
-    // Use JxBrowser Swing GUI toolkit
-    implementation "com.teamdev.jxbrowser:jxbrowser-swing:${jxBrowserVersion}"
+    // Use JxBrowser cross-platform binaries
+    implementation("com.teamdev.jxbrowser:jxbrowser-cross-platform:$jxBrowserVersion")
+
+    // Use JxBrowser SWT GUI toolkit
+    implementation("com.teamdev.jxbrowser:jxbrowser-swt:$jxBrowserVersion")
+}
+
+eclipseMavenCentral {
+    // Eclipse Platform v4.25 has SWT v3.121, which supports Apple Silicon,
+    // but doesn't support Java 8.
+    val eclipsePlatform = if (JavaVersion.current().isJava8) "4.8.0" else "4.25.0"
+    release(eclipsePlatform) {
+        implementation("org.eclipse.swt")
+        useNativesForRunningPlatform()
+    }
 }
 
 application {
     // Define the main class for the application
-    mainClassName = 'HelloWorld'
+    mainClass.set("HelloWorld")
 }
 
-tasks.withType(JavaExec) {
+tasks.withType<JavaExec> {
     // Assign all Java system properties from
     // the command line to the JavaExec task.
-    systemProperties System.properties
+    systemProperties(System.getProperties().mapKeys { it.key as String })
 }
