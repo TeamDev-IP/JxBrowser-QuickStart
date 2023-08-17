@@ -24,9 +24,6 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application
     application
-
-    // This plugin automatically resolves SWT dependencies.
-    id("com.diffplug.eclipse.mavencentral") version "3.40.0"
 }
 
 repositories {
@@ -43,16 +40,6 @@ dependencies {
 
     // Use JxBrowser SWT GUI toolkit
     implementation("com.teamdev.jxbrowser:jxbrowser-swt:$jxBrowserVersion")
-}
-
-eclipseMavenCentral {
-    // Eclipse Platform v4.25 has SWT v3.121, which supports Apple Silicon,
-    // but doesn't support Java 8.
-    val eclipsePlatform = if (JavaVersion.current().isJava8) "4.8.0" else "4.25.0"
-    release(eclipsePlatform) {
-        implementation("org.eclipse.swt")
-        useNativesForRunningPlatform()
-    }
 }
 
 application {
