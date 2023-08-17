@@ -18,8 +18,6 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.teamdev.jxbrowser.gradle.dependencies
-
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 
