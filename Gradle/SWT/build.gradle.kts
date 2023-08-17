@@ -18,6 +18,10 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+import com.teamdev.jxbrowser.gradle.dependencies.Swt
+import org.apache.tools.ant.taskdefs.condition.Os
+import org.apache.tools.ant.taskdefs.condition.Os.FAMILY_MAC
+
 plugins {
     // Apply the java plugin to add support for Java
     java
@@ -40,7 +44,11 @@ dependencies {
 
     // Use JxBrowser SWT GUI toolkit
     implementation("com.teamdev.jxbrowser:jxbrowser-swt:$jxBrowserVersion")
+
+    implementation(Swt.toolkitDependency)
 }
+
+Swt.configurePlatformDependency(project)
 
 application {
     // Define the main class for the application
@@ -48,7 +56,15 @@ application {
 }
 
 tasks.withType<JavaExec> {
+    if (Os.isFamily(FAMILY_MAC)) {
+        jvmArgs(
+            // For macOS to run SWT under Cocoa.
+            "-XstartOnFirstThread"
+        )
+    }
+
     // Assign all Java system properties from
     // the command line to the JavaExec task.
     systemProperties(System.getProperties().mapKeys { it.key as String })
 }
+
