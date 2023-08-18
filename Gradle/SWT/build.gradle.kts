@@ -18,7 +18,6 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import com.teamdev.jxbrowser.gradle.dependencies.Swt
 import org.apache.tools.ant.taskdefs.condition.Os
 import org.apache.tools.ant.taskdefs.condition.Os.FAMILY_MAC
 
