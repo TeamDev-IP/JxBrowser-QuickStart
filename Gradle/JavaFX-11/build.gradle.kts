@@ -36,7 +36,7 @@ repositories {
 }
 
 dependencies {
-    val jxBrowserVersion = "7.34.1"
+    val jxBrowserVersion = "7.36"
 
     // Use JxBrowser cross-platform binaries
     implementation("com.teamdev.jxbrowser:jxbrowser-cross-platform:$jxBrowserVersion")
