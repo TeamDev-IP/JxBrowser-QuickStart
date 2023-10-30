@@ -24,21 +24,21 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application
     application
+
+    // Provides convenience methods for adding JxBrowser dependencies into a project
+    id("com.teamdev.jxbrowser") version "1.0.1"
 }
 
-repositories {
-    // The repository for JxBrowser binaries.
-    maven("https://europe-maven.pkg.dev/jxbrowser/releases")
+jxbrowser {
+    version = "7.36"
 }
 
 dependencies {
-    val jxBrowserVersion = "7.36"
-
     // Use JxBrowser cross-platform binaries
-    implementation("com.teamdev.jxbrowser:jxbrowser-cross-platform:$jxBrowserVersion")
+    implementation(jxbrowser.crossPlatform)
 
     // Use JxBrowser JavaFX GUI toolkit
-    implementation("com.teamdev.jxbrowser:jxbrowser-javafx:$jxBrowserVersion")
+    implementation(jxbrowser.javafx)
 }
 
 application {
