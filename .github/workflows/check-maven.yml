@@ -15,7 +15,7 @@ jobs:
           distribution: 'corretto'
           java-version: '8'
       - run: |-
-          cd Maven/Core
+          cd Maven/OffScreen
           mvn package
           cd ../JavaFX
           mvn package
