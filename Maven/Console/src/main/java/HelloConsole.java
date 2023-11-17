@@ -27,7 +27,7 @@ import com.teamdev.jxbrowser.engine.Engine;
  * This example demonstrates how to load a web page, wait until it is loaded
  * completely, and print its HTML without displaying any GUI.
  */
-public final class HelloOffScreen {
+public final class HelloConsole {
 
     public static void main(String[] args) {
         // Initialize Chromium.

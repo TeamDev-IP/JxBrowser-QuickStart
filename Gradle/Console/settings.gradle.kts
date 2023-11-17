@@ -18,33 +18,4 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-plugins {
-    // Apply the java plugin to add support for Java
-    java
-
-    // Apply the application plugin to add support for building a CLI application
-    application
-
-    // Provides convenience methods for adding JxBrowser dependencies into a project
-    id("com.teamdev.jxbrowser") version "1.0.1"
-}
-
-jxbrowser {
-    version = "7.36.1"
-}
-
-dependencies {
-    // Use JxBrowser cross-platform binaries
-    implementation(jxbrowser.crossPlatform)
-}
-
-application {
-    // Define the main class for the application
-    mainClass.set("HelloOffScreen")
-}
-
-tasks.withType<JavaExec> {
-    // Assign all Java system properties from
-    // the command line to the JavaExec task.
-    systemProperties(System.getProperties().mapKeys { it.key as String })
-}
+rootProject.name = "Console"

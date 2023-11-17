@@ -22,14 +22,14 @@ To run an example, please follow the corresponding instruction:
 - [Swing](Gradle/Swing) — how to embed a component into a Swing application to display web content 
 - [JavaFX](Gradle/JavaFX) — how to embed a component into a JavaFX application to display web content
 - [SWT](Gradle/SWT) — how to embed a component into an SWT application to display web content
-- [OffScreen](Gradle/OffScreen) — how to work with a web page without displaying any GUI
+- [Console](Gradle/Console) — how to work with a web page without displaying any GUI
 
 ### Maven
 
 - [Swing](Maven/Swing) — how to embed a component into a Swing application to display web content
 - [JavaFX](Maven/JavaFX) — how to embed a component into a JavaFX application to display web content
 - [SWT](Maven/SWT) — how to embed a component into an SWT application to display web content
-- [OffScreen](Maven/OffScreen) — how to work with a web page without displaying any GUI
+- [Console](Maven/Console) — how to work with a web page without displaying any GUI
 
 ## Documentation
 
