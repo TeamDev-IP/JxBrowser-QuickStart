@@ -18,33 +18,31 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-plugins {
-    // Apply the java plugin to add support for Java
-    java
+import static com.teamdev.jxbrowser.engine.RenderingMode.OFF_SCREEN;
 
-    // Apply the application plugin to add support for building a CLI application
-    application
+import com.teamdev.jxbrowser.browser.Browser;
+import com.teamdev.jxbrowser.engine.Engine;
 
-    // Provides convenience methods for adding JxBrowser dependencies into a project
-    id("com.teamdev.jxbrowser") version "1.0.1"
-}
+/**
+ * This example demonstrates how to load a web page, wait until it is loaded
+ * completely, and print its HTML without displaying any GUI.
+ */
+public final class HelloConsole {
 
-jxbrowser {
-    version = "7.36.1"
-}
+    public static void main(String[] args) {
+        // Initialize Chromium.
+        Engine engine = Engine.newInstance(OFF_SCREEN);
 
-dependencies {
-    // Use JxBrowser cross-platform binaries
-    implementation(jxbrowser.crossPlatform)
-}
+        // Create a Browser instance.
+        Browser browser = engine.newBrowser();
 
-application {
-    // Define the main class for the application
-    mainClass.set("HelloWorld")
-}
+        // Load a web page and wait until it is loaded completely.
+        browser.navigation().loadUrlAndWait("https://html5test.com/");
 
-tasks.withType<JavaExec> {
-    // Assign all Java system properties from
-    // the command line to the JavaExec task.
-    systemProperties(System.getProperties().mapKeys { it.key as String })
+        // Print HTML of the loaded web page.
+        browser.mainFrame().ifPresent(frame -> System.out.println(frame.html()));
+
+        // Shutdown Chromium and release allocated resources.
+        engine.close();
+    }
 }

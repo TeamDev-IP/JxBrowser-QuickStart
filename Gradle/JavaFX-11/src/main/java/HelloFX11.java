@@ -33,7 +33,7 @@ import javafx.stage.Stage;
  * (equivalent of the Chromium tab), embed a JavaFX BrowserView component into JavaFX
  * scene to display content of the loaded web page, load the required web page.
  */
-public final class HelloWorld extends Application {
+public final class HelloFX11 extends Application {
 
     @Override
     public void start(Stage primaryStage) {

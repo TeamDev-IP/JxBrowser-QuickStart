@@ -19,17 +19,17 @@ To run an example, please follow the corresponding instruction:
 
 ### Gradle
 
-- [Swing](Gradle/Swing) — how to embed a component into a Swing application to display web content 
-- [JavaFX](Gradle/JavaFX) — how to embed a component into a JavaFX application to display web content
-- [SWT](Gradle/SWT) — how to embed a component into an SWT application to display web content
-- [Core](Gradle/Core) — how to work with a web page without displaying any GUI
+- [Swing](Gradle/Swing) — how to embed a component into a Swing application to display web content. 
+- [JavaFX](Gradle/JavaFX) — how to embed a component into a JavaFX application to display web content.
+- [SWT](Gradle/SWT) — how to embed a component into an SWT application to display web content.
+- [Console](Gradle/Console) — how to work with JxBrowser without displaying GUI.
 
 ### Maven
 
-- [Swing](Maven/Swing) — how to embed a component into a Swing application to display web content
-- [JavaFX](Maven/JavaFX) — how to embed a component into a JavaFX application to display web content
-- [SWT](Maven/SWT) — how to embed a component into an SWT application to display web content
-- [Core](Maven/Core) — how to work with a web page without displaying any GUI
+- [Swing](Maven/Swing) — how to embed a component into a Swing application to display web content.
+- [JavaFX](Maven/JavaFX) — how to embed a component into a JavaFX application to display web content.
+- [SWT](Maven/SWT) — how to embed a component into an SWT application to display web content.
+- [Console](Maven/Console) — how to work with JxBrowser without displaying GUI.
 
 ## Documentation
 

@@ -22,17 +22,18 @@ import static com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED;
 
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.engine.Engine;
-import com.teamdev.jxbrowser.view.swt.BrowserView;
-import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
+import com.teamdev.jxbrowser.view.swing.BrowserView;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 /**
  * This example demonstrates how to initialize Chromium, create a browser instance
- * (equivalent of the Chromium tab), embed an SWT BrowserView widget into SWT
- * shell to display content of the loaded web page, load the required web page.
+ * (equivalent of the Chromium tab), embed a Swing BrowserView component into Java Swing
+ * frame to display content of the loaded web page, load the required web page.
  */
-public final class HelloWorld {
+public final class HelloSwing {
 
     public static void main(String[] args) {
         // Initialize Chromium.
@@ -41,29 +42,23 @@ public final class HelloWorld {
         // Create a Browser instance.
         Browser browser = engine.newBrowser();
 
-        // Load the required web page.
-        browser.navigation().loadUrl("https://html5test.com");
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("JxBrowser AWT/Swing");
+            frame.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    // Shutdown Chromium and release allocated resources.
+                    engine.close();
+                }
+            });
+            // Create and embed Swing BrowserView component to display web content.
+            frame.add(BrowserView.newInstance(browser));
+            frame.setSize(1280, 800);
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
 
-        Display display = new Display();
-        Shell shell = new Shell(display);
-        shell.setText("JxBrowser SWT");
-        shell.setLayout(new FillLayout());
-
-        // Create and embed SWT BrowserView widget to display web content.
-        BrowserView view = BrowserView.newInstance(shell, browser);
-        view.setSize(1280, 800);
-
-        shell.pack();
-        shell.open();
-
-        while (!shell.isDisposed()) {
-            if (!display.readAndDispatch()) {
-                display.sleep();
-            }
-        }
-        // Shutdown Chromium and release allocated resources.
-        engine.close();
-
-        display.dispose();
+            // Load the required web page.
+            browser.navigation().loadUrl("https://html5test.com/");
+        });
     }
 }

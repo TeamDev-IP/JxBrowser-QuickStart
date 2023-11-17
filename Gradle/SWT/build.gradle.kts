@@ -54,7 +54,7 @@ Swt.configurePlatformDependency(project)
 
 application {
     // Define the main class for the application
-    mainClass.set("HelloWorld")
+    mainClass.set("HelloSWT")
 }
 
 tasks.withType<JavaExec> {

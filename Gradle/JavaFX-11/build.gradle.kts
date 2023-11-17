@@ -54,7 +54,7 @@ javafx {
 
 application {
     // Define the main class for the application
-    mainClass.set("HelloWorld")
+    mainClass.set("HelloFX11")
 }
 
 tasks.withType<JavaExec> {

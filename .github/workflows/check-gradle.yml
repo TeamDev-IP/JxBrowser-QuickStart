@@ -15,7 +15,7 @@ jobs:
           distribution: 'corretto'
           java-version: '8'
       - run: |-
-          cd Gradle/Core
+          cd Gradle/Console
           ./gradlew build
           cd ../JavaFX
           ./gradlew build
