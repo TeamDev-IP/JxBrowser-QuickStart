@@ -40,7 +40,7 @@ dependencies {
 
 application {
     // Define the main class for the application
-    mainClass.set("HelloWorld")
+    mainClass.set("HelloOffScreen")
 }
 
 tasks.withType<JavaExec> {
