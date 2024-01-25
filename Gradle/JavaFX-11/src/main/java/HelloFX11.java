@@ -43,7 +43,7 @@ public final class HelloFX11 extends Application {
         Browser browser = engine.newBrowser();
 
         // Load the required web page.
-        browser.navigation().loadUrl("https://html5test.com");
+        browser.navigation().loadUrl("https://html5test.co");
 
         // Create and embed JavaFX BrowserView component to display web content.
         BrowserView view = BrowserView.newInstance(browser);

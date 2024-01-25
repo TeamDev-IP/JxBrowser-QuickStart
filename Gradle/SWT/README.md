@@ -23,6 +23,6 @@ Use the following command:
 ./gradlew run -Djxbrowser.license.key=<your_license_key>
 ```
 
-It will build and start an SWT desktop application with SWT `BrowserView` inside that displays https://html5test.com as shown below:
+It will build and start an SWT desktop application with SWT `BrowserView` inside that displays https://html5test.co as shown below:
 
 ![SWT BrowserView](https://jxbrowser-support.teamdev.com/img/articles/swt-view.png)

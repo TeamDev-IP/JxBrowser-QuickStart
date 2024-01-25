@@ -58,7 +58,7 @@ public final class HelloSwing {
             frame.setVisible(true);
 
             // Load the required web page.
-            browser.navigation().loadUrl("https://html5test.com/");
+            browser.navigation().loadUrl("https://html5test.co/");
         });
     }
 }
