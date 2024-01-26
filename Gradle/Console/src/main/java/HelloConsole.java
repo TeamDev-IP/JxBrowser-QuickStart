@@ -37,7 +37,7 @@ public final class HelloConsole {
         Browser browser = engine.newBrowser();
 
         // Load a web page and wait until it is loaded completely.
-        browser.navigation().loadUrlAndWait("https://html5test.com/");
+        browser.navigation().loadUrlAndWait("https://html5test.co/");
 
         // Print HTML of the loaded web page.
         browser.mainFrame().ifPresent(frame -> System.out.println(frame.html()));
