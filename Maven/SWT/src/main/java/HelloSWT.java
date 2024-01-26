@@ -42,7 +42,7 @@ public final class HelloSWT {
         Browser browser = engine.newBrowser();
 
         // Load the required web page.
-        browser.navigation().loadUrl("https://html5test.co");
+        browser.navigation().loadUrl("https://html5test.teamdev.com");
 
         Display display = new Display();
         Shell shell = new Shell(display);

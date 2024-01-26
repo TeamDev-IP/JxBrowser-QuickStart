@@ -30,6 +30,6 @@ Use the following command:
 ```
 
 It will build and start a JavaFX desktop application with JavaFX `BrowserView` inside that
-displays https://html5test.co as shown below:
+displays https://html5test.teamdev.com as shown below:
 
 ![JavaFX BrowserView](https://jxbrowser-support.teamdev.com/img/articles/javafx-view.png)
