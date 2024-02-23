@@ -37,7 +37,7 @@ repositories {
 }
 
 jxbrowser {
-    version = "7.37.1"
+    version = "7.37.2"
 }
 
 dependencies {
