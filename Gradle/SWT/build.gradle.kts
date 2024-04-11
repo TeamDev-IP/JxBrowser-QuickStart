@@ -29,7 +29,7 @@ plugins {
     application
 
     // Provides convenience methods for adding JxBrowser dependencies into a project
-    id("com.teamdev.jxbrowser") version "1.0.1"
+    id("com.teamdev.jxbrowser") version "1.0.2"
 }
 
 repositories {
@@ -37,7 +37,7 @@ repositories {
 }
 
 jxbrowser {
-    version = "7.38.0"
+    version = "7.38.1"
 }
 
 dependencies {
