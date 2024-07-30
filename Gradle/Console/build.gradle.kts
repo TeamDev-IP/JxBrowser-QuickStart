@@ -30,7 +30,7 @@ plugins {
 }
 
 jxbrowser {
-    version = "7.39.2"
+    version = "7.40.0"
 }
 
 dependencies {
