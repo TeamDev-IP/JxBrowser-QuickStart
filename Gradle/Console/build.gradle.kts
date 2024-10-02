@@ -1,5 +1,5 @@
 /*
- *  Copyright 2023, TeamDev. All rights reserved.
+ *  Copyright 2024, TeamDev. All rights reserved.
  *
  *  Redistribution and use in source and/or binary forms, with or without
  *  modification, must retain the above copyright notice and the following
@@ -26,11 +26,11 @@ plugins {
     application
 
     // Provides convenience methods for adding JxBrowser dependencies into a project
-    id("com.teamdev.jxbrowser") version "1.0.2"
+    id("com.teamdev.jxbrowser") version "1.1.0"
 }
 
 jxbrowser {
-    version = "7.38.1"
+    version = "7.41.3"
 }
 
 dependencies {
