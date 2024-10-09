@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: 'corretto'
-          java-version: '8'
+          java-version: '17'
       - run: |-
           cd Maven/Console
           mvn package
