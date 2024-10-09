@@ -34,7 +34,7 @@ import com.teamdev.jxbrowser.view.compose.BrowserView
  */
 fun main() = singleWindowApplication(
     title = "Compose Desktop BrowserView",
-    state = WindowState(width = 700.dp, height = 500.dp),
+    state = WindowState(width = 1280.dp, height = 800.dp),
 ) {
     val engine = remember { Engine(OFF_SCREEN) }
     val browser = remember { engine.newBrowser() }
@@ -42,6 +42,6 @@ fun main() = singleWindowApplication(
     BrowserView(browser)
 
     LaunchedEffect(Unit) {
-        browser.navigation.loadUrl("https://ui.shadcn.com/blocks")
+        browser.navigation.loadUrl("https://html5test.teamdev.com")
     }
 }
