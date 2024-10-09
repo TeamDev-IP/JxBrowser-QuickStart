@@ -2,7 +2,7 @@ name: Check Gradle-based Projects
 on: pull_request
 
 jobs:
-  java8:
+  java17:
     runs-on: ubuntu-20.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -12,30 +12,17 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-java@v3
         with:
-          distribution: 'corretto'
-          java-version: '8'
+          distribution: 'zulu'
+          java-version: '17'
+          java-package: 'jdk+fx'
       - run: |-
-          cd Gradle/Console
+          cd Gradle/Compose
+          ./gradlew build
+          cd ../Console
           ./gradlew build
           cd ../JavaFX
           ./gradlew build
           cd ../Swing
           ./gradlew build
           cd ../SWT
-          ./gradlew build
-
-  java11:
-    runs-on: ubuntu-20.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-java@v3
-        with:
-          distribution: 'corretto'
-          java-version: '11'
-      - run: |-
-          cd Gradle/JavaFX-11
           ./gradlew build

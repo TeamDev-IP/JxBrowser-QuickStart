@@ -25,12 +25,19 @@ plugins {
     // Apply the application plugin to add support for building a CLI application
     application
 
+    // Apply OpenJFX plugin.
+    id("org.openjfx.javafxplugin") version "0.0.14"
+
     // Provides convenience methods for adding JxBrowser dependencies into a project
     id("com.teamdev.jxbrowser") version "1.1.0"
 }
 
+repositories {
+    mavenCentral()
+}
+
 jxbrowser {
-    version = "7.41.3"
+    version = "8.0.0"
 }
 
 dependencies {
@@ -39,6 +46,10 @@ dependencies {
 
     // Use JxBrowser JavaFX GUI toolkit
     implementation(jxbrowser.javafx)
+}
+
+javafx {
+    modules("javafx.controls")
 }
 
 application {
