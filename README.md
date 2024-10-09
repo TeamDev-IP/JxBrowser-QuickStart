@@ -1,10 +1,10 @@
 # Welcome to JxBrowser QuickStart
 
-This repository contains the examples for the [Quick Start](https://jxbrowser-support.teamdev.com/docs/quickstart/) guide.
+This repository contains the examples for the [Quick Start](https://teamdev.com/jxbrowser/docs/quickstart/) guide.
 
 ## Prerequisites
 
-Make sure your environment meets the [software and hardware requirements](https://jxbrowser-support.teamdev.com/docs/guides/introduction/requirements.html).
+Make sure your environment meets the [software and hardware requirements](https://teamdev.com/jxbrowser/docs/guides/introduction/requirements.html).
 
 Download a free 30-day trial key via the [web form](https://www.teamdev.com/jxbrowser#evaluate).
 
@@ -19,6 +19,7 @@ To run an example, please follow the corresponding instruction:
 
 ### Gradle
 
+- [Compose](Gradle/Compose) — how to embed a component into a Compose Desktop application to display web content. 
 - [Swing](Gradle/Swing) — how to embed a component into a Swing application to display web content. 
 - [JavaFX](Gradle/JavaFX) — how to embed a component into a JavaFX application to display web content.
 - [SWT](Gradle/SWT) — how to embed a component into an SWT application to display web content.
@@ -33,7 +34,7 @@ To run an example, please follow the corresponding instruction:
 
 ## Documentation
 
-Read more about JxBrowser features in our [guides](https://jxbrowser-support.teamdev.com/docs/guides) and [tutorials](https://jxbrowser-support.teamdev.com/docs/tutorials).
+Read more about JxBrowser features in our [guides](https://teamdev.com/jxbrowser/docs/guides) and [tutorials](https://teamdev.com/jxbrowser/docs/tutorials).
 
 ---
 

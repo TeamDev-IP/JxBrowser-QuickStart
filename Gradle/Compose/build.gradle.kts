@@ -26,7 +26,7 @@ plugins {
     id("com.teamdev.jxbrowser") version "1.1.0"
 
     // Adds UI toolkits.
-    id("org.jetbrains.compose") version "1.6.11"
+    id("org.jetbrains.compose") version "1.7.0-rc01"
     id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
 }
 
@@ -36,8 +36,7 @@ repositories {
 }
 
 jxbrowser {
-    version = "8.0.0-eap.5"
-    includePreviewBuilds = true
+    version = "8.0.0"
 }
 
 dependencies {
