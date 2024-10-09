@@ -17,7 +17,7 @@ jobs:
       - run: |-
           cd Gradle/Compose
           ./gradlew build
-          cd Gradle/Console
+          cd ../Gradle/Console
           ./gradlew build
           cd ../JavaFX
           ./gradlew build
