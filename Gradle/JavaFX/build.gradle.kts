@@ -29,7 +29,7 @@ plugins {
     id("org.openjfx.javafxplugin") version "0.0.14"
 
     // Provides convenience methods for adding JxBrowser dependencies into a project
-    id("com.teamdev.jxbrowser") version "1.1.0"
+    id("com.teamdev.jxbrowser") version "1.2.1"
 }
 
 repositories {
