@@ -1,4 +1,3 @@
-
 import com.teamdev.jxbrowser.engine.Engine
 import com.teamdev.jxbrowser.engine.EngineOptions
 import com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED
@@ -12,40 +11,38 @@ import org.eclipse.swt.widgets.Shell
  * (equivalent of the Chromium tab), embed a Swing BrowserView component into Java Swing
  * frame to display content of the loaded web page, load the required web page.
  */
-class HelloSwtKt {
-    fun main() {
-        // Initialize Chromium.
-        val options = EngineOptions.newBuilder(HARDWARE_ACCELERATED)
-            .licenseKey("your license key")
-            .build()
-        val engine = Engine.newInstance(options)
+fun main() {
+    // Initialize Chromium.
+    val options = EngineOptions.newBuilder(HARDWARE_ACCELERATED)
+        .licenseKey("your license key")
+        .build()
+    val engine = Engine.newInstance(options)
 
-        // Create a Browser instance.
-        val browser = engine.newBrowser()
+    // Create a Browser instance.
+    val browser = engine.newBrowser()
 
-        // Load the required web page.
-        browser.navigation().loadUrl("https://html5test.teamdev.com")
+    // Load the required web page.
+    browser.navigation().loadUrl("https://html5test.teamdev.com")
 
-        val display = Display()
-        val shell = Shell(display)
-        shell.text = "JxBrowser SWT"
-        shell.layout = FillLayout()
+    val display = Display()
+    val shell = Shell(display)
+    shell.text = "JxBrowser SWT"
+    shell.layout = FillLayout()
 
-        // Create and embed SWT BrowserView widget to display web content.
-        val view = BrowserView.newInstance(shell, browser)
-        view.setSize(1280, 800)
+    // Create and embed SWT BrowserView widget to display web content.
+    val view = BrowserView.newInstance(shell, browser)
+    view.setSize(1280, 800)
 
-        shell.pack()
-        shell.open()
+    shell.pack()
+    shell.open()
 
-        while (!shell.isDisposed) {
-            if (!display.readAndDispatch()) {
-                display.sleep()
-            }
+    while (!shell.isDisposed) {
+        if (!display.readAndDispatch()) {
+            display.sleep()
         }
-        // Shutdown Chromium and release allocated resources.
-        engine.close()
-
-        display.dispose()
     }
+    // Shutdown Chromium and release allocated resources.
+    engine.close()
+
+    display.dispose()
 }

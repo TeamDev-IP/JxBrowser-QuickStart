@@ -38,4 +38,12 @@ class HelloFxKt : Application() {
         primaryStage.setOnCloseRequest { engine.close() }
 
     }
+
+    fun run() {
+        launch()
+    }
+}
+
+fun main() {
+    HelloFxKt().run()
 }
