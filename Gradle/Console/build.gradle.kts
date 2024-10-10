@@ -24,7 +24,7 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application
     application
-
+    kotlin("jvm") version "1.8.0"
     // Provides convenience methods for adding JxBrowser dependencies into a project
     id("com.teamdev.jxbrowser") version "1.2.1"
 }
@@ -36,6 +36,7 @@ jxbrowser {
 dependencies {
     // Use JxBrowser cross-platform binaries
     implementation(jxbrowser.crossPlatform)
+    implementation(kotlin("stdlib"))
 }
 
 application {
