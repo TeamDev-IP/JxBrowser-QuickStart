@@ -48,6 +48,9 @@ dependencies {
 
     // Use JxBrowser JavaFX GUI toolkit
     implementation(jxbrowser.javafx)
+
+    // Use JxBrowser Kotlin DSL
+    implementation(jxbrowser.kotlin)
 }
 
 javafx {

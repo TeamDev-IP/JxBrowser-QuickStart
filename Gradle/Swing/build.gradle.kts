@@ -45,6 +45,9 @@ dependencies {
 
     // Use JxBrowser Swing GUI toolkit
     implementation(jxbrowser.swing)
+
+    // Use JxBrowser Kotlin DSL
+    implementation(jxbrowser.kotlin)
 }
 
 application {

@@ -1,5 +1,5 @@
-import com.teamdev.jxbrowser.engine.Engine
-import com.teamdev.jxbrowser.engine.EngineOptions
+import com.teamdev.jxbrowser.dsl.Engine
+import com.teamdev.jxbrowser.dsl.JxBrowserLicense
 import com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED
 import com.teamdev.jxbrowser.view.swing.BrowserView
 import java.awt.event.WindowAdapter
@@ -14,27 +14,27 @@ import javax.swing.SwingUtilities
  */
 fun main() {
     // Initialize Chromium.
-    val options = EngineOptions.newBuilder(HARDWARE_ACCELERATED)
-        .licenseKey("your license key")
-        .build()
-    val engine = Engine.newInstance(options)
+    val engine = Engine(HARDWARE_ACCELERATED) {
+        license = JxBrowserLicense("your license key")
+    }
 
     // Create a Browser instance.
     val browser = engine.newBrowser()
 
     SwingUtilities.invokeLater {
-        val frame = JFrame("JxBrowser AWT/Swing")
-        frame.addWindowListener(object : WindowAdapter() {
-            override fun windowClosing(e: WindowEvent) {
-                // Shutdown Chromium and release allocated resources.
-                engine.close()
-            }
-        })
-        // Create and embed Swing BrowserView component to display web content.
-        frame.add(BrowserView.newInstance(browser))
-        frame.setSize(1280, 800)
-        frame.setLocationRelativeTo(null)
-        frame.isVisible = true
+        JFrame("JxBrowser AWT/Swing").apply {
+            // Shutdown Chromium and release allocated resources when the frame closes.
+            addWindowListener(object : WindowAdapter() {
+                override fun windowClosing(e: WindowEvent) {
+                    engine.close()
+                }
+            })
+            // Create and embed Swing BrowserView component to display web content.
+            add(BrowserView.newInstance(browser))
+            setSize(1280, 800)
+            setLocationRelativeTo(null)
+            isVisible = true
+        }
 
         // Load the required web page.
         browser.navigation().loadUrl("https://html5test.teamdev.com/")

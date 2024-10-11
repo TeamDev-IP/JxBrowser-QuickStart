@@ -21,7 +21,7 @@
 plugins {
     // Apply the java plugin to add support for Java
     java
-
+    `kotlin-dsl`
     // Apply the application plugin to add support for building a CLI application
     application
     kotlin("jvm") version "2.0.0"
@@ -36,6 +36,9 @@ jxbrowser {
 dependencies {
     // Use JxBrowser cross-platform binaries
     implementation(jxbrowser.crossPlatform)
+
+    // Use JxBrowser Kotlin DSL
+    implementation(jxbrowser.kotlin)
 }
 
 repositories {

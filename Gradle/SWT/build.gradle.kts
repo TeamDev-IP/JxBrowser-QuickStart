@@ -50,6 +50,9 @@ dependencies {
     implementation(jxbrowser.swt)
 
     implementation(Swt.toolkitDependency)
+
+    // Use JxBrowser Kotlin DSL
+    implementation(jxbrowser.kotlin)
 }
 
 Swt.configurePlatformDependency(project)
