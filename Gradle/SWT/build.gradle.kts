@@ -25,6 +25,8 @@ plugins {
     // Apply the java plugin to add support for Java
     java
 
+    kotlin("jvm") version "2.0.0"
+
     // Apply the application plugin to add support for building a CLI application
     application
 
@@ -48,6 +50,9 @@ dependencies {
     implementation(jxbrowser.swt)
 
     implementation(Swt.toolkitDependency)
+
+    // Use JxBrowser Kotlin DSL
+    implementation(jxbrowser.kotlin)
 }
 
 Swt.configurePlatformDependency(project)
@@ -69,4 +74,3 @@ tasks.withType<JavaExec> {
     // the command line to the JavaExec task.
     systemProperties(System.getProperties().mapKeys { it.key as String })
 }
-

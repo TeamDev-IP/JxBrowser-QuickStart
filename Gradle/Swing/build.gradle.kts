@@ -22,6 +22,8 @@ plugins {
     // Apply the java plugin to add support for Java
     java
 
+    kotlin("jvm") version "2.0.0"
+
     // Apply the application plugin to add support for building a CLI application
     application
 
@@ -33,12 +35,19 @@ jxbrowser {
     version = "8.0.0"
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     // Use JxBrowser cross-platform binaries
     implementation(jxbrowser.crossPlatform)
 
     // Use JxBrowser Swing GUI toolkit
     implementation(jxbrowser.swing)
+
+    // Use JxBrowser Kotlin DSL
+    implementation(jxbrowser.kotlin)
 }
 
 application {
