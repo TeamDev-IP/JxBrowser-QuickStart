@@ -31,10 +31,10 @@ public final class HelloConsole {
 
     public static void main(String[] args) {
         // Initialize Chromium.
-        Engine engine = Engine.newInstance(OFF_SCREEN);
+        var engine = Engine.newInstance(OFF_SCREEN);
 
         // Create a Browser instance.
-        Browser browser = engine.newBrowser();
+        var browser = engine.newBrowser();
 
         // Load a web page and wait until it is loaded completely.
         browser.navigation().loadUrlAndWait("https://html5test.teamdev.com/");

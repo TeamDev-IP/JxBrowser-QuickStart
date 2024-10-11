@@ -36,21 +36,21 @@ public final class HelloSWT {
 
     public static void main(String[] args) {
         // Initialize Chromium.
-        Engine engine = Engine.newInstance(HARDWARE_ACCELERATED);
+        var engine = Engine.newInstance(HARDWARE_ACCELERATED);
 
         // Create a Browser instance.
-        Browser browser = engine.newBrowser();
+        var browser = engine.newBrowser();
 
         // Load the required web page.
         browser.navigation().loadUrl("https://html5test.teamdev.com");
 
-        Display display = new Display();
-        Shell shell = new Shell(display);
+        var display = new Display();
+        var shell = new Shell(display);
         shell.setText("JxBrowser SWT");
         shell.setLayout(new FillLayout());
 
         // Create and embed SWT BrowserView widget to display web content.
-        BrowserView view = BrowserView.newInstance(shell, browser);
+        var view = BrowserView.newInstance(shell, browser);
         view.setSize(1280, 800);
 
         shell.pack();
