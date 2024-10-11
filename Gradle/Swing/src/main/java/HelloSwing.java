@@ -37,13 +37,13 @@ public final class HelloSwing {
 
     public static void main(String[] args) {
         // Initialize Chromium.
-        Engine engine = Engine.newInstance(HARDWARE_ACCELERATED);
+        var engine = Engine.newInstance(HARDWARE_ACCELERATED);
 
         // Create a Browser instance.
-        Browser browser = engine.newBrowser();
+        var browser = engine.newBrowser();
 
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("JxBrowser AWT/Swing");
+            var frame = new JFrame("JxBrowser AWT/Swing");
             frame.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
