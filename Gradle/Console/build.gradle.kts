@@ -21,7 +21,7 @@
 plugins {
     // Apply the java plugin to add support for Java
     java
-    
+
     // Apply the application plugin to add support for building a CLI application
     application
     kotlin("jvm") version "2.0.0"
