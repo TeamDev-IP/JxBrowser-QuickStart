@@ -12,6 +12,7 @@
         <jxbrowser.version>8.1.0</jxbrowser.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <exec.mainClass>HelloFX</exec.mainClass>
     </properties>
 
     <repositories>
@@ -33,6 +34,11 @@
             <groupId>com.teamdev.jxbrowser</groupId>
             <artifactId>jxbrowser-javafx</artifactId>
             <version>${jxbrowser.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>17</version>
         </dependency>
     </dependencies>
 

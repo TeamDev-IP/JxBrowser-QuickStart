@@ -1,6 +1,6 @@
-# JxBrowser in SWT Gradle Project
+# JxBrowser in SWT Maven Project
 
-This example demonstrates how to configure a Gradle project with JxBrowser to embed an SWT `BrowserView` widget into an SWT desktop application to display web pages. 
+This example demonstrates how to configure a Maven project with JxBrowser to embed an SWT `BrowserView` widget into an SWT desktop application to display web pages.
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ Clone this repository using the following command:
 
  ```bash
  git clone https://github.com/TeamDev-IP/JxBrowser-QuickStart
- cd JxBrowser-QuickStart/Gradle/SWT
+ cd JxBrowser-QuickStart/Maven/SWT
  ```
 
 ## Get License
@@ -24,7 +24,7 @@ Download a free 30-day evaluation license key by sending a request via the [web 
 Use the following command:
 
 ```bash
-./gradlew run -Djxbrowser.license.key=<your_license_key>
+mvn clean compile exec:java -Djxbrowser.license.key=<your_license_key>
 ```
 
 It will build and start an SWT desktop application with SWT `BrowserView` inside that displays https://html5test.teamdev.com as shown below:
