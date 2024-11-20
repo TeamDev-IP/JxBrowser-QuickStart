@@ -1,6 +1,6 @@
-# JxBrowser in Swing Gradle Project
+# JxBrowser in Compose Gradle Project
 
-This example demonstrates how to configure a Gradle project with JxBrowser to embed a Swing `BrowserView` widget into a Swing desktop application to display web pages.
+This example demonstrates how to configure a Gradle project with JxBrowser to embed a Compose `BrowserView` widget into a Compose desktop application to display web pages.
 
 ## Download the Project
 
@@ -8,14 +8,14 @@ Clone this repository using the following command:
 
  ```bash
  git clone https://github.com/TeamDev-IP/JxBrowser-QuickStart
- cd JxBrowser-QuickStart/Gradle/Swing
+ cd JxBrowser-QuickStart/Gradle/Compose
  ```
 
 ## Get License
 
 Download a free 30-day evaluation license key by sending a request via the [web form](https://www.teamdev.com/jxbrowser#evaluate).
 
-## Run the Swing Application
+## Run the Compose Application
 
 Use the following command:
 
@@ -23,6 +23,5 @@ Use the following command:
 ./gradlew run -Djxbrowser.license.key=<your_license_key>
 ```
 
-It will build and start a Swing desktop application with Swing `BrowserView` inside that displays https://html5test.teamdev.com as shown below:
-
-![Swing BrowserView](https://jxbrowser-support.teamdev.com/img/articles/awt-swing-view.png)
+It will build and start a Compose desktop application with Swing `BrowserView` inside that displays https://html5test.teamdev.com as shown below: 
+![Compose BrowserView](compose-browser-view.png)

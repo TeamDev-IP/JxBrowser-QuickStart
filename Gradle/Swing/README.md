@@ -2,6 +2,10 @@
 
 This example demonstrates how to configure a Gradle project with JxBrowser to embed a Swing `BrowserView` widget into a Swing desktop application to display web pages.
 
+## Prerequisites
+
+To compile and run this example please make sure you use Java 17 or higher.
+
 ## Download the Project
 
 Clone this repository using the following command:
