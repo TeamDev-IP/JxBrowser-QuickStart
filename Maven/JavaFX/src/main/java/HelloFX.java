@@ -35,6 +35,10 @@ import javafx.stage.Stage;
  */
 public final class HelloFX extends Application {
 
+    public static void main(String[] args) {
+        launch(args); // Start the JavaFX application.
+    }
+
     @Override
     public void start(Stage primaryStage) {
         // Initialize Chromium.
