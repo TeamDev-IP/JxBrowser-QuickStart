@@ -2,6 +2,10 @@
 
 This example demonstrates how to configure a Gradle project with JxBrowser to use it in a console application.
 
+## Prerequisites
+
+To compile and run this example please make sure you use Java 17 or higher.
+
 ## Download the Project
 
 Clone this repository using the following command:

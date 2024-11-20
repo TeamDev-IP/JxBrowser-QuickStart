@@ -13,7 +13,7 @@ Clone this repository using the following command:
 
  ```bash
  git clone https://github.com/TeamDev-IP/JxBrowser-QuickStart
- cd JxBrowser-QuickStart/Gradle/JavaFX
+ cd JxBrowser-QuickStart/Maven/JavaFX
  ```
 
 ## Get License

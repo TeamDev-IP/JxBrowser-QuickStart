@@ -12,7 +12,7 @@ Clone this repository using the following command:
 
  ```bash
  git clone https://github.com/TeamDev-IP/JxBrowser-QuickStart
- cd JxBrowser-QuickStart/Gradle/SWT
+ cd JxBrowser-QuickStart/Maven/SWT
  ```
 
 ## Get License
