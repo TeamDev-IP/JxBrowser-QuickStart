@@ -24,4 +24,5 @@ Use the following command:
 ```
 
 It will build and start a Compose desktop application with Swing `BrowserView` inside that displays https://html5test.teamdev.com as shown below: 
+
 ![Compose BrowserView](compose-browser-view.png)
