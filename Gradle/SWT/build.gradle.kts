@@ -37,7 +37,7 @@ repositories {
 }
 
 jxbrowser {
-    version = "7.41.5"
+    version = "7.41.6"
 }
 
 dependencies {
@@ -69,4 +69,3 @@ tasks.withType<JavaExec> {
     // the command line to the JavaExec task.
     systemProperties(System.getProperties().mapKeys { it.key as String })
 }
-
